@@ -1,8 +1,8 @@
 package PageFunctions;
 
 
-import ObjectRepositories.CartPage_OR;
-import ObjectRepositories.ProductPage_OR;
+import ObjectRepositories.CartPage;
+import ObjectRepositories.ProductPage;
 import Utils.CoreActions;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
@@ -16,21 +16,21 @@ public class CartPagefunc extends CoreActions {
     SoftAssert softAssert = new SoftAssert();
 
     public void nameCheck() {
-        softAssert.assertTrue(dataMatcher(ProductPage_OR.productNameTextProductPage,CartPage_OR.ProductName_cartPage),"Correct product is added to the cart");
+        softAssert.assertTrue(dataMatcher(ProductPage.productNameTextProductPage, CartPage.ProductName_cartPage),"Correct product is added to the cart");
     }
 
     public void priceCheck() {
-        softAssert.assertTrue(dataMatcher(ProductPage_OR.productNamePriceProductPage,CartPage_OR.ProductPrice_cartPage), "Price of the product added to the cart is correct");
+        softAssert.assertTrue(dataMatcher(ProductPage.productNamePriceProductPage, CartPage.ProductPrice_cartPage), "Price of the product added to the cart is correct");
     }
 
     public void clickOnCheckOut() {
-        click(CartPage_OR.CheckOut);
+        click(CartPage.CheckOut);
     }
 
     public void verifyItemRemoveFromCartPage() {
-        Boolean isPresent = bot.findElements(CartPage_OR.inventoryItemBy).size() > 0;
+        Boolean isPresent = bot.findElements(CartPage.inventoryItemBy).size() > 0;
         System.out.println(isPresent);
-        softAssert.assertTrue(isPresent,"There is no product in Cart");
+        softAssert.assertTrue(isPresent,"There is no product in Cart, cart is empty");
     }
 
     public void assertfu() {

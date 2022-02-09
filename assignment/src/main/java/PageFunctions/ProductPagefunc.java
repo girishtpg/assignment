@@ -2,7 +2,7 @@ package PageFunctions;
 
 import org.openqa.selenium.WebDriver;
 
-import ObjectRepositories.ProductPage_OR;
+import ObjectRepositories.ProductPage;
 import Utils.CoreActions;
 
 public class ProductPagefunc extends CoreActions {
@@ -11,13 +11,13 @@ public class ProductPagefunc extends CoreActions {
     }
 
     public void clickOnAddToCart() {
-        ProductPage_OR.productNameTextProductPage = textRetriever(ProductPage_OR.ProductName_productPage);
-        ProductPage_OR.productNamePriceProductPage = textRetriever(ProductPage_OR.ProductPrice_productPage);
-        click(ProductPage_OR.AddToCart);
+        ProductPage.productNameTextProductPage = textRetriever(ProductPage.ProductName_productPage);
+        ProductPage.productNamePriceProductPage = textRetriever(ProductPage.ProductPrice_productPage);
+        click(ProductPage.AddToCart);
     }
 
     public void clickOnCart() {
-        click(ProductPage_OR.Cart);
+        click(ProductPage.Cart);
     }
 
 }

@@ -3,7 +3,7 @@ package PageFunctions;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import ObjectRepositories.Login_OR;
+import ObjectRepositories.Login;
 import configFile.JsonWriter;
 import Utils.CoreActions;
 
@@ -14,13 +14,13 @@ public class Loginfunc extends CoreActions {
 
     public void verifySite() {
         JsonWriter json_file = new JsonWriter();
-        waitForVisibility(Login_OR.Login);
+        waitForVisibility(Login.Login);
         Assert.assertEquals(json_file.read_value_from_json("PageTitle"),pageTitle());
     }
 
     public void enterUsernamesList(){
         JsonWriter json_file = new JsonWriter();
-        String[] lines = textRetriever(Login_OR.select_usernames_list).split("\\r?\\n|\\r");
+        String[] lines = textRetriever(Login.select_usernames_list).split("\\r?\\n|\\r");
         for(int i=1;i<5;i++){
             System.out.print("Username:");
             System.out.println(lines[i]);
@@ -49,20 +49,20 @@ public class Loginfunc extends CoreActions {
     }
 
     public void enterUsername(String username) {
-        enterText(Login_OR.Username, username);
+        enterText(Login.Username, username);
     }
 
     public void enterPassword(String password) {
-        enterText(Login_OR.Password, password);
+        enterText(Login.Password, password);
     }
 
     public void password() {
         sleep(3);
-        click(Login_OR.Password);
+        click(Login.Password);
     }
 
     public void clickOnLogin() {
-        click(Login_OR.Login);
+        click(Login.Login);
     }
 
 }

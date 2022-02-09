@@ -13,22 +13,22 @@ public class CheckOutPagefunc extends CoreActions {
     }
 
     public void enterFirstName(String firstName) {
-        enterText(CheckOutPage_OR.FirstName, firstName);
+        enterText(CheckOutPage.FirstName, firstName);
     }
 
     public void enterLastName(String lastName) {
-        enterText(CheckOutPage_OR.LastName, lastName);
+        enterText(CheckOutPage.LastName, lastName);
     }
 
     public void enterPostalCode(String postalCode) {
-        enterText(CheckOutPage_OR.PostalCode, postalCode);
+        enterText(CheckOutPage.PostalCode, postalCode);
     }
 
     public void clickOnContinue() {
-        click(CheckOutPage_OR.Continue);
+        click(CheckOutPage.Continue);
     }
 
     public void clickOnFinsh() {
-        click(CheckOutPage_OR.Finsh);
+        click(CheckOutPage.Finsh);
     }
 }
